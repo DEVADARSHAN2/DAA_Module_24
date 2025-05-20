@@ -27,16 +27,21 @@ To create a python program using brute force method of searching for the given s
 ### Register Number: 212222110007
 
 ```
-import re
 def match(string,sub):
-    pattern = re.compile(str2)
-    r = pattern.search(str1)
-    while r:
-        print("Found at index {}".format(r.start()))
-        r = pattern.search(str1,r.start()+1)    
+    l = len(string)
+    ls = len(sub)
+    start = sub[0]
+    for i in range(l-ls+1):
+        j=0
+        while j<ls and string[i+j]==sub[j]:
+            j+=1
+        if j==ls:
+            print('Found at index',i)
+    return -1
 
 str1=input()
 str2=input()
+
 ```
 
 ## Output :
